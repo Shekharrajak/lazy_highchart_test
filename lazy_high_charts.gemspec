@@ -1,34 +1,37 @@
-# coding: utf-8
-lib = File.expand_path('../lib', __FILE__)
-$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+# -*- encoding: utf-8 -*-
+$LOAD_PATH.unshift File.expand_path('../lib', __FILE__)
+version = File.read(File.expand_path("../GEM_VERSION", __FILE__)).strip
 
-Gem::Specification.new do |spec|
-  spec.name          = "lazy_high_charts"
-  spec.version       = 0.1
-  spec.authors       = ["shekharrajak"]
-  spec.email         = ["shekharstudy@ymail.com"]
+Gem::Specification.new do |s|
+  s.name = "lazy_high_charts"
+  s.version = version
+  s.platform = Gem::Platform::RUBY
+  s.authors = ['Miguel Michelson', 'Deshi Xiao']
+  s.email = ['miguelmichelson@gmail.com', 'xiaods@gmail.com']
+  s.homepage = "https://github.com/michelson/lazy_high_charts"
+  s.summary = "rubyist way to render variant chart by highcharts without write javascript right now, rails gem library."
+  s.description = "lazy_high_charts is leading edge rubyist render charts gem for displaying Highcharts graphs."
 
-  spec.summary       = "testing highchart"
-  spec.description   ="testing highchart"
-  spec.homepage      = "https://github.com/shekharrajak"
-  spec.license       = "MIT"
-
-  # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
-  # to allow pushing to a single host or delete this section to allow pushing to any host.
-  if spec.respond_to?(:metadata)
-    spec.metadata['allowed_push_host'] = "Set to 'http://mygemserver.com'"
-  else
-    raise "RubyGems 2.0 or newer is required to protect against " \
-      "public gem pushes."
+  s.extra_rdoc_files = ["README.md", "CHANGELOG.md"]
+  s.rdoc_options = ["--charset=UTF-8"]
+  key = File.expand_path("~/.ssh/gem-private_key.pem")
+  if File.exist?(key)
+    s.signing_key = key
+    s.cert_chain = ["gem-public_cert.pem"]
   end
 
-  spec.files         = `git ls-files -z`.split("\x0").reject do |f|
-    f.match(%r{^(test|spec|features)/})
-  end
-  spec.bindir        = "exe"
-  spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
-  spec.require_paths = ["lib"]
+  s.required_rubygems_version = ">= 1.3"
 
-  spec.add_development_dependency "bundler", "~> 1.14"
-  spec.add_development_dependency "rake", "~> 10.0"
+  s.add_development_dependency "bundler", ">= 1.0"
+  s.add_dependency "hash-deep-merge"
+
+  s.description = <<-DESC
+    lazy_high_charts is leading edge rubyist render charts gem for displaying Highcharts graphs.
+  DESC
+
+  s.files = `git ls-files`.split("\n")
+  s.executables = `git ls-files`.split("\n").select { |f| f =~ /^bin/ }
+  s.require_path = 'lib'
+
 end
+
