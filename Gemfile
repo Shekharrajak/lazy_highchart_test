@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 # Specify your gem's dependencies in lazy_high_charts.gemspec
-gemspec  :path => '/'
+gemspec
 
 # Use SCSS for stylesheets
 gem "sass"
