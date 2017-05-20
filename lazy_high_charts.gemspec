@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = "testing highchart"
   spec.description   ="testing highchart"
-  spec.homepage      = "testing highchart"
+  spec.homepage      = "https://github.com/shekharrajak"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
