@@ -1,0 +1,69 @@
+<%= high_chart("my_id", @chart) %>
+
+<%= high_chart("my_id2", @chart2) %>
+
+<%= high_chart("my_id3", @chart3) do |c| %>
+      <%= raw "options.tooltip.formatter = function() {return '<b> YUPI!! '+ this.point.name +'</b>: '+ this.y +' %';}"  %>
+      <%= raw "options.plotOptions.pie.dataLabels.formatter = function() { if (this.y > 5) return this.point.name; }"  %>
+  <% end %>
+
+<%= high_chart("my_id4", @chart4) %>
+
+<%= high_chart("my_id5", @graph1) do |c| %>
+  <%=raw "options.plotOptions.series.point.events.click = function() { location.href='http://www.hotmail.com'; }" %>
+<% end %>
+
+
+<!-- # not working
+<%= high_chart "funnel_chart", @funnel_chart %> -->
+
+<!-- ed pie chart -->
+<%= high_chart("my_id6", @chart3d_1) do |c| %>
+      <%= raw "options.tooltip.formatter = function() {return '<b> YUPI!! '+ this.point.name +'</b>: '+ this.y +' %';}"  %>
+      <%= raw "options.plotOptions.pie.dataLabels.formatter = function() { if (this.y > 5) return this.point.name; }"  %>
+  <% end %>
+
+<div id="sliders">
+    <table>
+        <tr>
+        	<td>Alpha Angle</td>
+        	<td><input id="alpha" type="range" min="0" max="45" value="15"/> <span id="alpha-value" class="value"></span></td>
+        </tr>
+        <tr>
+        	<td>Beta Angle</td>
+        	<td><input id="beta" type="range" min="-45" max="45" value="15"/> <span id="beta-value" class="value"></span></td>
+        </tr>
+        <tr>
+        	<td>Depth</td>
+        	<td><input id="depth" type="range" min="20" max="100" value="50"/> <span id="depth-value" class="value"></span></td>
+        </tr>
+    </table>
+</div>
+
+<script type="text/javascript">
+  var chart = <%=raw @chart3d_1 %>
+  function showValues() {
+    $('#alpha-value').html(chart.options.chart.options3d.alpha);
+    $('#beta-value').html(chart.options.chart.options3d.beta);
+    $('#depth-value').html(chart.options.chart.options3d.depth);
+}
+
+// Activate the sliders
+$('#sliders input').on('input change', function () {
+  var chart = <%=raw @chart3d_1 %>
+    chart.options.chart.options3d[this.id] = parseFloat(this.value);
+    showValues();
+    chart.redraw(false);
+});
+
+
+</script>
+
+<!-- 3d pie plot end -->
+
+<%= high_chart("my_id7", @chart3d_2) %>
+
+<%= high_chart("my_id8", @area1) %>
+
+<%= high_chart("my_id9", @line1) %>
+
