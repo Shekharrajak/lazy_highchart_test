@@ -22,8 +22,8 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = ">= 1.3"
 
-  spec.add_development_dependency "bundler", "~> 1.14"
-  spec.add_development_dependency "rake", "~> 10.0"
+  s.add_development_dependency "bundler", "~> 1.14"
+  s.add_development_dependency "rake", "~> 10.0"
   s.add_dependency "hash-deep-merge"
 
   s.description = <<-DESC
