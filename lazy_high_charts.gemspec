@@ -1,10 +1,10 @@
 # -*- encoding: utf-8 -*-
 $LOAD_PATH.unshift File.expand_path('../lib', __FILE__)
-version = File.read(File.expand_path("../GEM_VERSION", __FILE__)).strip
+
 
 Gem::Specification.new do |s|
   s.name = "lazy_high_charts"
-  s.version = version
+  s.version = 1.0
   s.platform = Gem::Platform::RUBY
   s.authors = ['Miguel Michelson', 'Deshi Xiao']
   s.email = ['miguelmichelson@gmail.com', 'xiaods@gmail.com']
