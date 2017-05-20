@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
   spec.name          = "lazy_high_charts"
-  spec.version       = Foodie::VERSION
+  spec.version       = 0.1
   spec.authors       = ["shekharrajak"]
   spec.email         = ["shekharstudy@ymail.com"]
 
