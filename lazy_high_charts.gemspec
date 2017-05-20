@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["shekharstudy@ymail.com"]
 
   spec.summary       = "testing highchart"
-  spec.description   ="testing highchart"}
+  spec.description   ="testing highchart"
   spec.homepage      = "testing highchart"
   spec.license       = "MIT"
 
