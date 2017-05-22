@@ -7,3 +7,4 @@ A very simple proof-of-concept of using [lazy_high_charts](https://github.com/mi
 ## USAGE:
 
     bundle exec rails s
+    go to http://localhost:3000/charts
